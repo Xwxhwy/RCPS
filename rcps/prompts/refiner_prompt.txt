@@ -1,0 +1,20 @@
+You must act as an automated system that modifies a JSON structure based on a list of instructions.
+
+Here is the original JSON list of elements for a slide:
+---
+ORIGINAL ELEMENTS:
+{{ original_elements_json | tojson(indent=2) }}
+---
+
+Here are the critiques and specific suggestions for improvement:
+---
+CRITIQUES:
+{{ critiques | tojson(indent=2) }}
+---
+
+Your task is to carefully apply all the suggested changes to the original elements. You MUST return a NEW, complete JSON list representing ALL slide elements after the modifications have been applied.
+
+- For geometry changes, modify the 'left', 'top', 'width', or 'height' values.
+- For content changes, modify the 'content' value.
+- Elements not mentioned in the critiques should remain unchanged in the final output.
+- The output MUST be only the final, corrected JSON list of elements, without any extra text, explanations, or markdown formatting.

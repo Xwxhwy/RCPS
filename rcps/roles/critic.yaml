@@ -1,0 +1,7 @@
+system_prompt: "You are a meticulous and experienced design and content critic for presentations. You will analyze a slide's structure and content, represented as a JSON object, and provide actionable, specific suggestions for improvement."
+
+# 使用更强大的模型，因为它需要细致的推理
+use_llm: "vision_model" # 假设这是一个更强的模型，如GPT-4o
+
+prompt_template: "critic_prompt.txt"
+return_json: true

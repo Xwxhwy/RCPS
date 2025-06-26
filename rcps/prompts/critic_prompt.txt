@@ -1,0 +1,40 @@
+A slide with the title "{{ slide_title }}" has been generated.
+Here is the JSON representation of its elements. Positions and sizes are in points (a standard 16:9 slide is 720pt wide and 405pt high).
+
+SLIDE ELEMENTS:
+---
+{{ slide_elements_json | tojson(indent=2) }}
+---
+
+Please analyze these elements and provide critiques. Your goal is to improve clarity, balance, and professionalism. Focus on:
+- **Alignment**: Are elements (e.g., text boxes, images) properly aligned with each other or with the slide's guides (center, edges)?
+- **Spacing (White Space)**: Is the slide well-balanced? Is it too crowded or too empty? Are elements too close or too far apart?
+- **Hierarchy & Readability**: Is the title clearly dominant? Is the body text easy to read (not too large, not too small)?
+- **Conciseness**: Is the text in any element too verbose for a slide?
+
+If you find no significant issues that require changes, you MUST return a JSON object with a single key:
+{"status": "NO_CHANGE_NEEDED"}
+
+Otherwise, you MUST return a JSON object with a list of concrete, actionable suggestions. Each suggestion must be an object with three keys: "element_id", "issue", and "suggestion".
+
+EXAMPLE of a valid output with suggestions:
+{
+  "status": "CHANGES_SUGGESTED",
+  "suggestions": [
+    {
+      "element_id": "p1_elem1",
+      "issue": "Alignment",
+      "suggestion": "The left edge of this text box (left: 80.5) is not aligned with the title (left: 72.0). Adjust its 'left' property to 72.0."
+    },
+    {
+      "element_id": "p1_elem2",
+      "issue": "Readability",
+      "suggestion": "The height of this image (height: 100) is too small compared to the text. Increase its 'height' to at least 180 to make it more impactful."
+    },
+    {
+      "element_id": "p1_elem1",
+      "issue": "Conciseness",
+      "suggestion": "The text content of this element is too long. Shorten the third bullet point to focus on the key outcome."
+    }
+  ]
+}

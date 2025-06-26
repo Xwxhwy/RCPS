@@ -1,0 +1,37 @@
+You are tasked with creating a presentation outline from the following document text.
+The final presentation should be a concise and logical summary, not a direct copy of the text.
+
+DOCUMENT TEXT:
+---
+{{ document_text }}
+---
+
+Follow these steps with precision (Reflective Chain-of-Thought):
+
+Step 1: [Initial Analysis] Briefly identify the main goal of the document and its key topics.
+Step 2: [Thematic Grouping] Group the key topics into 3-5 logical narrative modules (e.g., "Introduction", "Problem Statement", "Proposed Solution", "Key Results", "Conclusion").
+Step 3: [Reflection and Reordering] Review the module sequence. Does it tell a compelling story? Is the flow logical? If not, reorder the modules and briefly explain why.
+Step 4: [Slide-by-Slide Generation] Based on the final module order, generate a detailed slide-by-slide plan.
+
+For each slide in the plan, you MUST define the following in a JSON object:
+1. "purpose": A short, clear goal for the slide (e.g., "Introduce the core problem and its impact").
+2. "concept": An abstract description of the slide's content for the layout generator. This MUST include:
+    - "has_image": A boolean (true/false) indicating if this slide should ideally contain an image or visual.
+    - "bullet_points_count": An integer representing the estimated number of bullet points (typically between 2 and 5).
+3. "source_text_chunk": The SINGLE most relevant and concise text snippet from the original document that this slide should be based on. This chunk will be given to the content generator. Keep it under 150 words.
+
+Your final output must be ONLY the JSON list of slide objects, without any preceding text or explanations.
+
+EXAMPLE of a valid final JSON output:
+[
+  {
+    "purpose": "Title and Introduction to Automated Presentation Generation",
+    "concept": {"has_image": false, "bullet_points_count": 3},
+    "source_text_chunk": "Automated generation of high-quality media presentations is challenging, requiring robust content extraction, narrative planning, and visual design. Existing methods often produce presentations with logical inconsistencies."
+  },
+  {
+    "purpose": "Visualizing the RCPS Framework",
+    "concept": {"has_image": true, "bullet_points_count": 2},
+    "source_text_chunk": "To address these challenges, we introduce RCPS (Reflective Coherent Presentation Synthesis), a novel framework integrating three key components: Deep Structured Narrative Planning, Adaptive Layout Generation, and an Iterative Optimization Loop."
+  }
+]

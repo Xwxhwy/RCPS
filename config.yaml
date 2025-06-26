@@ -1,0 +1,28 @@
+# config.yaml
+workspace_dir: "workspace"
+imr_cycles: 2
+design_style: "modern" # "professional", "minimalist", "creative"
+
+# 色板配置 (可以从constants.py中选择)
+color_palette:
+  primary: "#004494"
+  secondary: "#0078D4"
+  accent: "#F5A623"
+  text: "#212121"
+  background: "#FFFFFF"
+
+# LLM 模型配置
+llms:
+  - name: "language_model"
+    model: "qwen-max"
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    api_key: "sk-your-key-here" # 请替换成你的KEY
+  - name: "vision_model"
+    model: "qwen-vl-max"
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    api_key: "sk-your-key-here"
+
+# LPG 配置
+lpg:
+  model_path: "path/to/your/lpg_model.pth"
+  use_mock: true # 在模型训练好前，保持为true

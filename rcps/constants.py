@@ -1,0 +1,102 @@
+# rcps/constants.py
+
+
+# --- 特殊序列Token ---
+SOS_TOKEN = "<SOS>"  # Start of Sequence
+EOS_TOKEN = "<EOS>"  # End of Sequence
+SEP_TOKEN = "<SEP>"  # Separator token between elements
+
+
+LAYOUT_TITLE_SUBTITLE = "LAYOUT_TITLE_SUBTITLE"
+LAYOUT_TITLE_ONLY = "LAYOUT_TITLE_ONLY"
+LAYOUT_SECTION_HEADER = "LAYOUT_SECTION_HEADER"
+LAYOUT_CONTENT_ONE_COL = "LAYOUT_CONTENT_ONE_COL"
+LAYOUT_CONTENT_TWO_COL = "LAYOUT_CONTENT_TWO_COL"
+LAYOUT_CONTENT_THREE_COL = "LAYOUT_CONTENT_THREE_COL" # 新增
+LAYOUT_COMPARISON = "LAYOUT_COMPARISON"             # 新增：用于对比
+LAYOUT_IMAGE_WITH_CAPTION = "LAYOUT_IMAGE_WITH_CAPTION"
+LAYOUT_QUOTE_OR_HIGHLIGHT = "LAYOUT_QUOTE_OR_HIGHLIGHT" # 新增：用于引用或突出重点
+LAYOUT_BLANK = "LAYOUT_BLANK"
+
+# --- 元素类型 (Element Type) Tokens ---
+ELEM_TITLE = "ELEM_TITLE"
+ELEM_SUBTITLE = "ELEM_SUBTITLE"
+ELEM_BODY_TEXT = "ELEM_BODY_TEXT"           # 通用正文
+ELEM_BULLET_POINTS = "ELEM_BULLET_POINTS"     # 新增：专门的列表
+ELEM_NUMBERED_LIST = "ELEM_NUMBERED_LIST"     # 新增：专门的数字列表
+ELEM_IMAGE = "ELEM_IMAGE"
+ELEM_CHART = "ELEM_CHART"
+ELEM_TABLE = "ELEM_TABLE"
+ELEM_CODE_BLOCK = "ELEM_CODE_BLOCK"           # 新增：代码块
+ELEM_QUOTE = "ELEM_QUOTE"                   # 新增：引用
+ELEM_FOOTER = "ELEM_FOOTER"
+ELEM_HEADER = "ELEM_HEADER"
+ELEM_PAGE_NUMBER = "ELEM_PAGE_NUMBER"         # 新增：页码
+
+# --- 属性 (Attribute) Tokens ---
+
+# 内容特征属性
+ATTR_CONTENT_DENSITY_LOW = "ATTR_CONTENT_DENSITY_LOW"      # 内容稀疏 (e.g., 1-2 points)
+ATTR_CONTENT_DENSITY_MEDIUM = "ATTR_CONTENT_DENSITY_MEDIUM" # 内容适中 (e.g., 3-5 points)
+ATTR_CONTENT_DENSITY_HIGH = "ATTR_CONTENT_DENSITY_HIGH"     # 内容密集 (e.g., >5 points)
+ATTR_IMAGE_ASPECT_WIDE = "ATTR_IMAGE_ASPECT_WIDE"
+ATTR_IMAGE_ASPECT_SQUARE = "ATTR_IMAGE_ASPECT_SQUARE"
+ATTR_IMAGE_ASPECT_TALL = "ATTR_IMAGE_ASPECT_TALL"
+
+# 尺寸/重要性属性
+ATTR_SIZE_MAJOR = "ATTR_SIZE_MAJOR"   # 主要元素，视觉焦点
+ATTR_SIZE_MINOR = "ATTR_SIZE_MINOR"   # 次要元素，辅助信息
+
+# 位置与对齐属性
+POS_TOP = "POS_TOP"
+POS_MIDDLE = "POS_MIDDLE"
+POS_BOTTOM = "POS_BOTTOM"
+POS_LEFT = "POS_LEFT"
+POS_RIGHT = "POS_RIGHT"
+POS_CENTER = "POS_CENTER"
+POS_FULL_WIDTH = "POS_FULL_WIDTH" # 新增：全宽
+
+ALIGN_LEFT = "ALIGN_LEFT"       # 新增：文本左对齐
+ALIGN_CENTER = "ALIGN_CENTER"     # 新增：文本居中
+ALIGN_RIGHT = "ALIGN_RIGHT"      # 新增：文本右对齐
+
+DISTRIBUTE_VERTICALLY = "DISTRIBUTE_VERTICALLY"   # 新增：垂直分布
+DISTRIBUTE_HORIZONTALLY = "DISTRIBUTE_HORIZONTALLY" # 新增：水平分布
+
+# ==============================================================================
+# 2. 设计系统 (Design System) 常量
+# ==============================================================================
+
+# 设计风格主题
+DESIGN_STYLE_MODERN = "modern"
+DESIGN_STYLE_PROFESSIONAL = "professional"
+DESIGN_STYLE_MINIMALIST = "minimalist"
+DESIGN_STYLE_CREATIVE = "creative"
+
+# 主题色板
+COLOR_PALETTE_CORPORATE_BLUE = {
+    "primary": "#004494",
+    "secondary": "#0078D4",
+    "accent": "#F5A623",
+    "text": "#212121",
+    "background": "#FFFFFF",
+}
+COLOR_PALETTE_TECH_DARK = {
+    "primary": "#4A90E2",
+    "secondary": "#50E3C2",
+    "accent": "#F8E71C",
+    "text": "#FFFFFF",
+    "background": "#121212",
+}
+
+
+# Agent 角色名称
+AGENT_PLANNER = "planner"
+AGENT_CONTENT_GENERATOR = "content_generator"
+AGENT_CRITIC = "critic"
+AGENT_REFINER = "refiner"
+
+# IMR 循环状态
+IMR_STATUS_SUCCESS = "SUCCESS"
+IMR_STATUS_NO_CHANGE = "NO_CHANGE_NEEDED"
+IMR_STATUS_MAX_CYCLES_REACHED = "MAX_CYCLES_REACHED"

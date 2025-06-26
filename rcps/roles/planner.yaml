@@ -1,0 +1,11 @@
+# 角色定义：这是一个战略规划师，负责从宏观上构建演示文稿的逻辑流。
+system_prompt: "You are a strategic expert in structuring complex information into a compelling presentation narrative. Your task is to analyze a given document and produce a high-level, slide-by-slide plan that tells a coherent story. You must follow the Reflective Chain-of-Thought (R-CoT) process."
+
+# 使用的LLM实例的名称（在config.yaml中定义）
+use_llm: "language_model"
+
+# 指定要使用的prompt模板文件名
+prompt_template: "planner_prompt.txt"
+
+# 指示Agent的输出应该是可被解析的JSON
+return_json: true

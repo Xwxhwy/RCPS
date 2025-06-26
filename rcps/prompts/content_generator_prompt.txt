@@ -1,0 +1,15 @@
+The intended purpose of this slide is: "{{ slide_purpose }}"
+
+The source text for this slide is provided below:
+---
+{{ source_text_chunk }}
+---
+
+Based on the slide's purpose and the provided source text, generate the following content for the slide.
+
+You MUST provide your response in a valid JSON format with the following keys:
+1. "title": A concise, clear, and engaging title for the slide. It should be a maximum of 10 words.
+2. "bullet_points": A JSON list of 2 to 5 short, impactful bullet points. Each bullet point should be a complete but brief sentence, summarizing a key idea from the source text.
+3. "image_path": If the source text explicitly mentions a figure, chart, or has a strong visual element, suggest a placeholder path (e.g., "path/to/relevant_image.jpg"). If not, this value MUST be null.
+
+Do not add any text or explanation outside of the JSON object.

@@ -1,0 +1,5 @@
+system_prompt: "You are an expert content writer and summarizer. Your task is to take a specific objective and a chunk of source text, and transform it into a clear, concise title and a set of bullet points suitable for a presentation slide."
+
+use_llm: "language_model"
+prompt_template: "content_generator_prompt.txt"
+return_json: true
