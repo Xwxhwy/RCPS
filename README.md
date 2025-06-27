@@ -1,6 +1,5 @@
 # RCPS: Reflective Coherent Presentation Synthesis
 
-[![Paper-Link-Coming-Soon](https://img.shields.io/badge/Paper-Link-red?style=flat-square)](https://arxiv.org/abs/YOUR_PAPER_ID) <!-- Replace with your arXiv link -->
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 This is the official PyTorch implementation for the paper: **"Multi-Agent Synergy-Driven Iterative Visual Narrative Synthesis"**.
