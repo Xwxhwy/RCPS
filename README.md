@@ -34,25 +34,25 @@ This section presents further analysis and visualizations to provide deeper insi
 
 > To ensure the robustness and generalizability of our framework, RCPS is trained and evaluated on a diverse dataset spanning multiple domains. This prevents overfitting to a single field and validates its applicability to a wide range of topics.
 
-![Dataset Distribution](assets/chart_domain_distribution.png)
+![Dataset Distribution](chart_domain_distribution.png)
 
 ### 2. Layout Performance: Adaptive vs. Fixed Templates
 
 > A core contribution of RCPS is its **Adaptive Layout Generation (LPG)**. We conducted a comparative analysis against a fixed-template approach, similar to that used by systems like PPTAgent. The results clearly show that while templates are adequate for simple slides, their performance degrades sharply as content complexity increases. In contrast, **our LPG maintains high layout quality**, proving its superior flexibility and robustness for real-world scenarios.
 
-![Layout Performance Comparison](assets/chart_layout_performance.png)
+![Layout Performance Comparison](chart_layout_performance.png)
 
 ### 3. Head-to-Head Comparison with SOTA (PPTAgent)
 
 > To directly benchmark against the state-of-the-art, we performed a head-to-head pairwise preference study comparing RCPS with PPTAgent. Human evaluators showed a strong preference for our method, particularly in the critical dimensions of **Design** and **Overall Quality**. This quantitatively validates the effectiveness of our framework's core design principles.
 
-![RCPS vs PPTAgent Performance](assets/chart_rcps_vs_pptagent.png)
+![RCPS vs PPTAgent Performance](chart_rcps_vs_pptagent.png)
 
 ### 4. Impact of Training Data Distribution
 
 > We analyzed how performance correlates with the amount of in-domain training data. As expected, RCPS exhibits stronger performance and faster convergence in data-rich domains (e.g., Education). Importantly, even in data-poor domains (e.g., Arts & Design), **our model still significantly outperforms the baseline**, showcasing its effective and generalizable learning capabilities.
 
-![Model Performance by Domain](assets/chart_model_performance_by_domain.png)
+![Model Performance by Domain](chart_model_performance_by_domain.png)
 
 ## Installation
 
