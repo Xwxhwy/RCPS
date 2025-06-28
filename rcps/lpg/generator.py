@@ -1,4 +1,3 @@
-# rcps/lpg/generator.py (逻辑重构版)
 from typing import Dict, List
 from ..utils import get_logger
 from ..agent import Agent
@@ -24,7 +23,7 @@ class LayoutPrototypeGenerator:
             slide_content=slide_content
         )
 
-        # 假设LLM返回的JSON中有一个名为'ldl_sequence'的键
+
         ldl_sequence = ldl_sequence_json.get("ldl_sequence")
         if not ldl_sequence or not isinstance(ldl_sequence, list):
             logger.error(f"Layout Architect Agent returned invalid LDL sequence: {ldl_sequence_json}")
