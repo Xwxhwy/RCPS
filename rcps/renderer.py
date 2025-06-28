@@ -1,4 +1,3 @@
-# rcps/renderer.py (修正版)
 import os
 from abc import ABC, abstractmethod
 from typing import Dict
@@ -103,7 +102,6 @@ class PptxRenderer(BaseRenderer):
 
     def _get_style_config(self, design_style: str, color_palette: Dict) -> Dict:
         """根据设计风格和色板返回具体的样式配置。"""
-        # 修复了对 C 的引用
         config = {
             'font_family': 'Helvetica Neue',
             'font_size_title': 36,
