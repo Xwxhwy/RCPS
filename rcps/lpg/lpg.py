@@ -1,8 +1,7 @@
-# rcps/lpg.py (最终修复版)
 from typing import Dict, List
-import torch  # 假设使用PyTorch
+import torch 
 
-# --- 修复：清理并统一了对 constants 模块的引用 ---
+
 from RCPS_Project.rcps import constants as C
 # -----------------------------------------------
 
@@ -13,20 +12,7 @@ logger = get_logger(__name__)
 
 
 class LayoutPrototypeGenerator:
-    """
-    内容自适应布局原型生成器 (LPG)。
-    这是RCPS框架的核心创新之一。它加载一个预训练的深度学习模型，
-    根据对幻灯片内容的抽象理解（Slide Concept），动态地生成一个
-    符号化的布局描述语言（LDL）序列。
-    """
-
     def __init__(self, model_path: str, device: str = 'cpu', use_mock: bool = False):
-        """
-        Args:
-            model_path (str): 预训练的LPG模型路径 (.pth文件)。
-            device (str): 运行模型的设备 ('cpu' or 'cuda')。
-            use_mock (bool): 是否使用模拟模式，用于在没有真实模型时进行开发。
-        """
         self.use_mock = use_mock
         if self.use_mock:
             self.model = None
@@ -45,11 +31,6 @@ class LayoutPrototypeGenerator:
             raise LayoutError("Failed to load LPG model.") from e
 
     def _concept_to_tensor(self, slide_concept: Dict) -> torch.Tensor:
-        """
-        将结构化的幻灯片概念字典转换为模型可以接受的输入张量。
-        这是一个特征工程的过程。
-        """
-
         num_points = slide_concept.get("bullet_points_count", 0)
         has_image = 1.0 if slide_concept.get("has_image", False) else 0.0
         title_len = len(slide_concept.get("title_suggestion", ""))
