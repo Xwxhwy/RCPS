@@ -1,4 +1,3 @@
-# rcps/rcps_generator.py (最终版)
 from typing import Dict, List, Any
 
 from .document import PDFParser
@@ -17,15 +16,6 @@ class RCPSGenerator:
 
 
     def __init__(self, config: Dict[str, Any]):
-        """
-        初始化RCPS生成器。
-
-        Args:
-            config (Dict[str, Any]): 一个包含所有配置的字典。
-
-        Raises:
-            ConfigError: 如果配置不完整或不正确。
-        """
         self.config = config
         self.workspace_dir = config.get("workspace_dir", "workspace")
         ensure_dir(self.workspace_dir)
@@ -69,9 +59,7 @@ class RCPSGenerator:
 
     def run(self, pdf_path: str, output_path: str) -> Presentation:
         try:
-            # ==================================================================
             # 阶段一：文档解析与叙事规划 (R-CoT)
-            # ==================================================================
             logger.info("--- STAGE 1: Document Parsing and Narrative Planning (R-CoT) ---")
             doc = self.pdf_parser.parse(pdf_path)
 
@@ -92,9 +80,8 @@ class RCPSGenerator:
                 logger.info(
                     f"--- Processing Slide {page_id}/{len(narrative_plan)}: {slide_plan.get('purpose', '')} ---")
 
-                # ==================================================================
+
                 # 阶段二：布局生成与内容实例化
-                # ==================================================================
                 logger.info(f"[Slide {page_id}] STAGE 2: Layout & Content Generation")
 
 
@@ -110,15 +97,13 @@ class RCPSGenerator:
 
                 slide_page = SlidePage.from_plan_and_layout(page_id, slide_content_details, layout_tokens)
 
-                # ==================================================================
                 # 阶段三：迭代多模态优化 (IMR)
-                # ==================================================================
                 logger.info(f"[Slide {page_id}] STAGE 3: Iterative Multi-modal Refinement (IMR)")
                 slide_page = self._run_imr_loop(slide_page)
 
                 presentation.add_slide(slide_page)
 
-            # --- 工作流结束：渲染最终演示文稿 ---
+
             logger.info("--- WORKFLOW COMPLETE: Rendering final presentation ---")
             self.renderer.render(presentation, output_path)
 
