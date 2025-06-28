@@ -1,4 +1,3 @@
-# rcps/shapes.py (修正版)
 from dataclasses import dataclass, field
 from typing import Optional, Dict, Any, Literal
 
