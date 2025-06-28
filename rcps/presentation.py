@@ -19,10 +19,6 @@ class SlidePage:
 
     @classmethod
     def from_plan_and_layout(cls, page_id: int, slide_plan: Dict, layout_tokens: List[str]) -> "SlidePage":
-        """
-        [核心创新] 布局解释器：根据R-CoT的幻灯片计划和LPG生成的LDL，创建SlidePage实例。
-        这是将符号化布局转化为具体对象的地方。
-        """
         logger.info(f"Interpreting layout for slide {page_id}: {' '.join(layout_tokens)}")
 
         page = cls(page_id=page_id, title=slide_plan.get("title", f"Slide {page_id}"))
@@ -45,7 +41,7 @@ class SlidePage:
             if current_block:
                 element_blocks.append(current_block)
 
-            # 模拟的页面尺寸 (单位: 磅)
+
             PAGE_WIDTH, PAGE_HEIGHT = 720, 405  # 16:9 in points (10x5.625 inches)
 
             # 为每个元素块创建Shape
@@ -76,7 +72,6 @@ class SlidePage:
                         f"Layout specified an image, but no image_path found in slide_plan. Skipping image element.")
                     continue
 
-                # 解析位置和大小属性 (这是一个简化的规则引擎)
                 left, top, width, height = cls._interpret_geometry(block, PAGE_WIDTH, PAGE_HEIGHT)
 
                 page.shapes.append(Shape(
