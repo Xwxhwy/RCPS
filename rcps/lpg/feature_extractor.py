@@ -1,4 +1,3 @@
-# rcps/lpg/feature_extractor.py
 from typing import Dict, List
 import numpy as np
 from sentence_transformers import SentenceTransformer
