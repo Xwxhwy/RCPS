@@ -11,7 +11,7 @@ logger = get_logger(__name__)
 
 @dataclass
 class BoundingBox:
-    """标准化的边界框对象，单位为磅(points)。"""
+    """单位为磅(points)。"""
     x0: float
     y0: float
     x1: float
@@ -44,12 +44,12 @@ class MediaObject(DocumentElement):
     caption_llm: Optional[str] = None
     metadata: Dict[str, Any] = field(default_factory=dict)
 
-# --- 修复结束 ---
 
 
-# ==============================================================================
+
+
 # 2. 文档容器 (Document Container)
-# ==============================================================================
+
 
 @dataclass
 class Document:
@@ -79,7 +79,6 @@ class Document:
 
 
 class PDFParser:
-    """一个高效的PDF解析器。"""
 
     def __init__(self, workspace_dir: str = "workspace"):
         self.workspace_dir = workspace_dir
